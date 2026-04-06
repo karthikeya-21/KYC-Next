@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/85 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 text-white">
+      <nav className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 text-white sm:px-6 lg:flex-row lg:items-center lg:justify-between">
         <Link href="/" className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-amber-300/30 bg-gradient-to-br from-amber-300/25 to-zinc-900 text-sm font-semibold text-amber-200 shadow-lg shadow-amber-400/10">
             KYC
@@ -47,7 +47,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <div className="flex items-center gap-2 rounded-full border border-zinc-800 bg-white/5 p-1.5 text-sm text-zinc-200">
+        <div className="flex w-full items-center gap-2 overflow-x-auto rounded-full border border-zinc-800 bg-white/5 p-1.5 text-sm text-zinc-200 lg:w-auto">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             const Icon = item.icon;
@@ -56,7 +56,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-2 rounded-full px-4 py-2 transition ${
+                className={`flex shrink-0 items-center gap-2 rounded-full px-4 py-2 transition ${
                   isActive
                     ? "bg-amber-300 font-medium text-zinc-950 hover:bg-amber-200"
                     : "hover:bg-white/10 hover:text-white"

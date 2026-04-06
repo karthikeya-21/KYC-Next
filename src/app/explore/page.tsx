@@ -47,25 +47,25 @@ export default function Page() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-zinc-950 via-zinc-900 to-stone-950 px-4 py-8 text-white">
+    <main className="min-h-screen bg-gradient-to-br from-zinc-950 via-zinc-900 to-stone-950 px-4 py-6 text-white sm:px-6 sm:py-8">
       <section className="mx-auto max-w-7xl space-y-8">
-        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/30 backdrop-blur">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-300">
+        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-2xl shadow-black/30 backdrop-blur sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-300 sm:text-sm sm:tracking-[0.28em]">
             Explore Collection
           </p>
 
           <div className="mt-4 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
-              <h1 className="text-4xl font-bold tracking-tight text-white">
+              <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Discover Cars With Premium Detail
               </h1>
-              <p className="mt-3 text-base leading-7 text-zinc-300">
+              <p className="mt-3 text-sm leading-7 text-zinc-300 sm:text-base">
                 Browse by brand, search by model, and explore the latest cars
                 in a cleaner premium experience.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-amber-300/15 bg-amber-300/10 px-5 py-4 text-sm text-amber-100">
+            <div className="w-full rounded-2xl border border-amber-300/15 bg-amber-300/10 px-5 py-4 text-sm text-amber-100 sm:w-auto">
               <p className="font-semibold uppercase tracking-[0.2em] text-amber-300">
                 Results
               </p>
@@ -82,7 +82,7 @@ export default function Page() {
 
           <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-zinc-950/70 p-3 shadow-inner shadow-black/20">
             <input
-              className="w-full rounded-[1.2rem] border border-zinc-800 bg-transparent px-5 py-4 text-base text-white outline-none placeholder:text-zinc-500 focus:border-amber-300/50"
+              className="w-full rounded-[1.2rem] border border-zinc-800 bg-transparent px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-amber-300/50 sm:px-5 sm:py-4 sm:text-base"
               type="text"
               title="Search"
               placeholder="Search for brands and cars"
@@ -99,7 +99,7 @@ export default function Page() {
             />
           </div>
 
-          <div className="mt-8 flex items-center justify-between text-sm text-zinc-400">
+          <div className="mt-8 flex flex-col gap-2 text-sm text-zinc-400 sm:flex-row sm:items-center sm:justify-between">
             <p>
               Search Results {searchText.trim() ? `for "${searchText}"` : ""}
             </p>
@@ -107,7 +107,7 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/20 backdrop-blur">
+        <div className="rounded-[2rem] border border-white/10 bg-white/5 p-4 shadow-2xl shadow-black/20 backdrop-blur sm:p-6">
           {resultCars.length > 0 && <SearchList cars={resultCars} />}
 
           {resultCars.length === 0 && (

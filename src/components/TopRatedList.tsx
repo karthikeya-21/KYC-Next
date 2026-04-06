@@ -1,20 +1,22 @@
 import CarCard from "./CarCard";
 import { Car } from "@/app/lib/data";
 
-interface TopRatedListProps{
-  cars:Car[];
+interface TopRatedListProps {
+  cars: Car[];
 }
-export default function TopRatedList({cars}:TopRatedListProps) {
+export default function TopRatedList({ cars }: TopRatedListProps) {
   return (
-    <div>
+    <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-4 text-white shadow-xl shadow-black/15 backdrop-blur sm:p-6">
       <div>
-        <p className="font-bold text-2xl">Top Rated Cars</p>
-        </div>
-      <div className="flex justify-center items-center gap-3 overflow-x-auto">
-        {cars.map((car)=>(
-          <CarCard key={car._id} car={car}/>
+        <p className="text-xl font-bold sm:text-2xl">Top Rated Cars</p>
+      </div>
+      <div className="mt-4 flex gap-4 overflow-x-auto pb-2 sm:gap-5">
+        {cars.map((car) => (
+          <div key={car._id} className="w-[280px] shrink-0 sm:w-[320px]">
+            <CarCard car={car} />
+          </div>
         ))}
       </div>
     </div>
-  )
+  );
 }
