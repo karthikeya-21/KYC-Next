@@ -111,23 +111,23 @@ export default function ProfileCard() {
                 Settings
               </p>
 
-              <div className="mt-5 flex flex-col gap-3">
+              <div className="mt-5 flex flex-col gap-3 md:flex-row md:flex-wrap lg:flex-col">
                 <button
                   type="button"
-                  className="rounded-[1rem] border border-white/10 bg-zinc-950/70 px-4 py-3 text-center text-sm text-zinc-200 transition hover:border-amber-300/30 hover:bg-white/5"
+                  className="w-full rounded-[1rem] border border-white/10 bg-zinc-950/70 px-4 py-3 text-center text-sm text-zinc-200 transition hover:border-amber-300/30 hover:bg-white/5 md:w-auto md:px-5 lg:w-full lg:px-4"
                 >
                   Report Error
                 </button>
                 <button
                   type="button"
-                  className="rounded-[1rem] border border-white/10 bg-zinc-950/70 px-4 py-3 text-center text-sm text-zinc-200 transition hover:border-amber-300/30 hover:bg-white/5"
+                  className="w-full rounded-[1rem] border border-white/10 bg-zinc-950/70 px-4 py-3 text-center text-sm text-zinc-200 transition hover:border-amber-300/30 hover:bg-white/5 md:w-auto md:px-5 lg:w-full lg:px-4"
                 >
                   Change Password
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsDeleteOpen(true)}
-                  className="rounded-[1rem] border border-red-500/20 bg-red-500/10 px-4 py-3 text-center text-sm text-red-200 transition hover:bg-red-500/15"
+                  className="w-full rounded-[1rem] border border-red-500/20 bg-red-500/10 px-4 py-3 text-center text-sm text-red-200 transition hover:bg-red-500/15 md:w-auto md:px-5 lg:w-full lg:px-4"
                 >
                   Delete Account
                 </button>

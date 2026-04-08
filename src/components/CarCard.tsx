@@ -9,7 +9,7 @@ interface CarCardProps {
 export default function CarCard({car}:CarCardProps) {
   return (
     <div className="h-full">
-      <Link href="/CarDetail" className="block h-full">
+      <Link href={`/CarDetail/${car._id}`} className="block h-full">
         <div className="card h-full overflow-hidden rounded-[1.5rem] border border-white/10 bg-zinc-950/80 p-3 shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-amber-300/30 hover:bg-zinc-900/90">
           <div className="relative h-44 w-full overflow-hidden rounded-[1.1rem] sm:h-52">
             <Image
