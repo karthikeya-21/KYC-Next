@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const isLoggedIn = false;
 
   const navItems = [
     {
@@ -23,12 +24,23 @@ export default function Navbar() {
       label: "Wishlist",
       icon: FaHeart,
     },
-    {
-      href: "/profile",
-      label: "Profile",
-      icon: FaUser,
-    },
   ];
+
+  const authItems = isLoggedIn
+    ? [
+        {
+          href: "/profile",
+          label: "Profile",
+          icon: FaUser,
+        },
+      ]
+    : [
+        {
+          href: "/login",
+          label: "Login / Register",
+          icon: FaUser,
+        },
+      ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/85 backdrop-blur-xl">
@@ -60,6 +72,30 @@ export default function Navbar() {
                   isActive
                     ? "bg-amber-300 font-medium text-zinc-950 hover:bg-amber-200"
                     : "hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                <Icon
+                  className={`text-xs ${
+                    isActive ? "text-zinc-950" : "text-amber-300"
+                  }`}
+                />
+                <span>{item.label}</span>
+              </Link>
+            );
+          })}
+
+          {authItems.map((item) => {
+            const isActive = pathname === item.href;
+            const Icon = item.icon;
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`flex shrink-0 items-center gap-2 rounded-full px-4 py-2 transition ${
+                  isActive
+                    ? "bg-amber-300 font-medium text-zinc-950 hover:bg-amber-200"
+                    : "border border-white/10 font-medium text-zinc-100 hover:border-amber-300/30 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 <Icon
